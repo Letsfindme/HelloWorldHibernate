@@ -104,10 +104,12 @@ Transaction tx = session.beginTransaction();
             
             tx.commit();          
 Puisque nous voulions insérer un nouvel enregistrement dans la table du lecturer, et qu'Hibernate nous permet d'oublier les enregistrements, tout ce dont nous avons besoin est de sauvegarder (c'est-à-dire créer et enregistrer) un nouvel objet de lecturer.
+
   Lecturer lecturer1 = new Lecturer();
-          lecturer1.setFirstName("Fatma");
-          lecturer1.setLastName("Meawad");
+          lecturer1.setFirstName("Fat");
+          lecturer1.setLastName("Mat");
           session.save(lecturer1);        
+          
 Et c'est le code que vous avez collé dans SimpleTest.java
 Exécutez cette requête:
                 insert into Lecturer (FName, LName, ID) values ('Fatma','Meawad', '8')              
