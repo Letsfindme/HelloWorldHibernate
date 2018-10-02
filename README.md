@@ -7,7 +7,7 @@ Le fichier de configuration 'hibernate.cfg.xml'.
 La classe de test 'SimpleTest.java'.
 Nous allons maintenant expliquer le code dans ces fichiers.
 
-##La classe persistante 'Lecturer.java'.
+## La classe persistante 'Lecturer.java'.
 Comme expliqué dans la section précédente, nous devons avoir une classe correspondant à chaque table d'entités dans notre base de données. Les instances de cette classe seront utilisées pour représenter les enregistrements de base de données. Par conséquent, la classe doit être capable de transporter des données pouvant exister dans de tels enregistrements, et puisque le maître de conférences dispose des colonnes:
 
 ID (int),
@@ -21,7 +21,7 @@ Il est préférable de ne pas fournir un accès direct aux variables, mais d'uti
 
 
 _
-##Le fichier de mappage 'Lecturer.hbm.xml':
+## Le fichier de mappage 'Lecturer.hbm.xml':
 La section précédente a montré que nous avons besoin d'un fichier de mappage pour indiquer à Hibernate, quelle classe représente quelle table et quelle variable instantanée correspond à quelle colonne.
 Dans notre exemple, nous avons:
 Une classe "Lecturer" correspondant à la Table "Lecturer", ceci est déclaré ainsi:
@@ -42,7 +42,7 @@ Dans notre exemple, nous l'avons déclaré ainsi:
        <generator class="increment"/>
 </id>                   
 
-##La clé primaire de la table est représentée par la variable instantanée nommée 'ID'.
+## La clé primaire de la table est représentée par la variable instantanée nommée 'ID'.
 La classe de générateur de la clé primaire est «incrément». Cela signifie que Hibernate va le définir en incrémentant de 1 la valeur maximale de l'ID dans la table. En d'autres termes, Hibernate sélectionnera l'ID max dans le tableau; Ajoutez-y 1; définir la valeur ID du nouvel objet sur la valeur calculée.
 Notez que l'attribut de colonne n'est pas défini. Cela est dû au fait que le nom de la variable est identique au nom de la colonne et que la valeur par défaut d'Hibernate pour l'attribut column est la valeur de l'attribut name.
 
@@ -53,7 +53,7 @@ in XML file, or
 in .properties file
  Dans notre exemple, nous avons utilisé un fichier XML pour définir les configurations Hibernate.
 
-##Le fichier 'hibernate.cfg.xml' contenait les configurations de base nécessaires pour obtenir et gérer les connexions; ces configurations sont:
+## Le fichier 'hibernate.cfg.xml' contenait les configurations de base nécessaires pour obtenir et gérer les connexions; ces configurations sont:
 
 L'URL de la source de données
                    <property name="connection.url">jdbc_URL</property>            
@@ -62,7 +62,7 @@ Nom d'utilisateur et mot de passe SQL Server
                 <property name="connection.username">jdbc_Username</property>
               <property name="connection.password">jdbc_Password</property>            
 
-##La classe de notre Driver
+## La classe de notre Driver
 <property name="connection.driver_class">
                         sun.jdbc.odbc.JdbcOdbcDriver
 </property>            
